@@ -2,9 +2,9 @@ package GameOOP;
 
 public class Human {
     protected String name_id;
-    protected Integer hp;
-    protected Integer damage;
-    protected Integer stamina;
+    protected Integer hp = 10;
+    protected Integer damage = 0;
+    protected Integer stamina = 5;
 
 
     public Human(String name_id, Integer hp, Integer damage, Integer stamina) {
@@ -17,9 +17,6 @@ public class Human {
 
     public Human(String name_id) {
         this.name_id = name_id;
-        this.hp = 10;
-        this.damage = 0;
-        this.stamina = 5;
     }
 
     public Human() {

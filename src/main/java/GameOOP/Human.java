@@ -25,7 +25,7 @@ public class Human {
     }
 
     public void run() {
-        System.out.printf("%s %s бежит", type,getName_id());
+        System.out.printf("%s %s бежит", type, getName_id());
         System.out.println();
 
     }

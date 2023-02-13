@@ -1,13 +1,13 @@
 package GameOOP;
 
 public class Shooter extends Human {
-    protected Integer sharpshooting =5;
+    protected Integer sharpshooting = 5;
     protected Integer rapidity;
     protected Integer range;
-    protected Integer arrows =25;
+    protected Integer arrows = 25;
 
-    public Shooter(String name_id, Integer hp, Integer damage, Integer stamina, Integer sharpshooting, Integer rapidity, Integer range, Integer arrows) {
-        super(name_id, hp, damage, stamina);
+    public Shooter(String type, String name_id, Integer hp, Integer damage, Integer stamina, Integer sharpshooting, Integer rapidity, Integer range, Integer arrows) {
+        super(type, name_id, hp, damage, stamina);
         this.sharpshooting = sharpshooting;
         this.rapidity = rapidity;
         this.range = range;
@@ -15,18 +15,18 @@ public class Shooter extends Human {
     }
 
     public Shooter(String name) {
-        super.name_id =name;
-
+        super.name_id = name;
+        super.type = "Стрелок";
     }
 
     public void shoot() {
-        System.out.printf("Игрок %s стреляет", getName_id());
+        System.out.printf("%s %s стреляет", type, getName_id());
         System.out.println();
     }
 
     @Override
     public String toString() {
-        return "Human{" +
+        return type + "{" +
                 "name_id='" + name_id + '\'' +
                 ", hp=" + hp +
                 ", damage=" + damage +

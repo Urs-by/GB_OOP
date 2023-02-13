@@ -1,13 +1,15 @@
 package GameOOP;
 
 public class Human {
+    protected String type = "Человек";
     protected String name_id;
     protected Integer hp = 10;
     protected Integer damage = 0;
     protected Integer stamina = 5;
 
 
-    public Human(String name_id, Integer hp, Integer damage, Integer stamina) {
+    public Human(String type, String name_id, Integer hp, Integer damage, Integer stamina) {
+        this.type = type;
         this.name_id = name_id;
         this.hp = hp;
         this.damage = damage;
@@ -23,22 +25,25 @@ public class Human {
     }
 
     public void run() {
-        System.out.printf("Игрок %s бежит", getName_id());
+        System.out.printf("%s %s бежит", type,getName_id());
+        System.out.println();
 
     }
 
     public void move() {
-        System.out.printf("Игрок %s идет", getName_id());
+        System.out.printf("%s %s идет", type, getName_id());
+        System.out.println();
     }
 
     public void rest() {
-        System.out.printf("Игрок %s отдыхает", getName_id());
+        System.out.printf("%s %s отдыхает", type, getName_id());
+        System.out.println();
     }
 
 
     @Override
     public String toString() {
-        return "Human{" +
+        return type + "{" +
                 "name_id='" + name_id + '\'' +
                 ", hp=" + hp +
                 ", damage=" + damage +

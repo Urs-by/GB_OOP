@@ -6,9 +6,9 @@ public class Farmer extends Human {
     }
 
     public Farmer(String name_id) {
-        super(name_id);
-        super.type = "Крестьянин";
+        super("Крестьянин", name_id, 7, 3, 9);
     }
+
 
     public void prepares() {
         System.out.printf("%s %s заготавливает продукты", type, getName_id());

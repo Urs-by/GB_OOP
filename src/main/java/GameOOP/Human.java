@@ -1,14 +1,12 @@
 package GameOOP;
 
-public class Human {
-    protected String type = "Человек";
-    protected String name_id;
-    protected Integer hp = 10;
-    protected Integer damage = 0;
-    protected Integer stamina = 5;
+public abstract class Human {
+    protected String type, name_id;
+    protected Integer hp, damage,stamina;
 
 
-    public Human(String type, String name_id, Integer hp, Integer damage, Integer stamina) {
+
+    public Human(String type, String name_id, Integer hp , Integer damage, Integer stamina) {
         this.type = type;
         this.name_id = name_id;
         this.hp = hp;

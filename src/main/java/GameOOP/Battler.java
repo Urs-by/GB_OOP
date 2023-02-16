@@ -1,13 +1,7 @@
 package GameOOP;
 
-public class Battler extends Human {
-    protected Boolean weapon;
-    protected Boolean armor;
-
-    public void attacks() {
-        System.out.printf("%s %s аттакует", type, getName_id());
-        System.out.println();
-    }
+public abstract class Battler extends Human {
+    Boolean weapon, armor;
 
     public Battler(String type, String name_id, Integer hp, Integer damage, Integer stamina, Boolean weapon, Boolean armor) {
         super(type, name_id, hp, damage, stamina);
@@ -15,23 +9,33 @@ public class Battler extends Human {
         this.armor = armor;
     }
 
-    public Battler(String name_id) {
-        super(name_id);
-        super.type = "Боец";
+    public Battler() {
+        super();
     }
 
-    @Override
-    public String toString() {
-        return type + "{" +
-                "name_id='" + name_id + '\'' +
-                ", hp=" + hp +
-                ", damage=" + damage +
-                ", stamina=" + stamina +
-                ", weapon=" + weapon +
-                ", armor=" + armor +
-                '}';
+    public void attacks() {
+        System.out.printf("%s %s аттакует", type, getName_id());
+        System.out.println();
     }
 
+    //
+//    public Battler(String name_id) {
+//        super(name_id);
+//        super.type = "Боец";
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return type + "{" +
+//                "name_id='" + name_id + '\'' +
+//                ", hp=" + hp +
+//                ", damage=" + damage +
+//                ", stamina=" + stamina +
+//                ", weapon=" + weapon +
+//                ", armor=" + armor +
+//                '}';
+//    }
+//
     public Boolean getWeapon() {
         return weapon;
     }

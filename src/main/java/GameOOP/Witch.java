@@ -8,4 +8,9 @@ public class Witch extends Magi {
     public Witch(String name_id) {
         super("Колдун",name_id, 10,7,10,7,10);
     }
+
+    @Override
+    public String getInfo() {
+        return ("Я колдун ");
+    }
 }

@@ -1,12 +1,13 @@
 package GameOOP;
 
-public abstract class Human {
+import java.util.Random;
+
+public abstract class Human implements HumanInterface {
     protected String type, name_id;
-    protected Integer hp, damage,stamina;
+    protected Integer hp, damage, stamina;
 
 
-
-    public Human(String type, String name_id, Integer hp , Integer damage, Integer stamina) {
+    public Human(String type, String name_id, Integer hp, Integer damage, Integer stamina) {
         this.type = type;
         this.name_id = name_id;
         this.hp = hp;
@@ -49,6 +50,17 @@ public abstract class Human {
                 '}';
     }
 
+    @Override
+    public String getInfo() {
+        return "Я человек ";
+    }
+
+    @Override
+    public void step() {
+    }
+
+
+
     public String getName_id() {
         return name_id;
     }
@@ -62,7 +74,7 @@ public abstract class Human {
     }
 
     public void setHp(Integer hp) {
-        this.hp = hp;
+        if (hp >= 0) this.hp = hp;
     }
 
     public Integer getDamage() {

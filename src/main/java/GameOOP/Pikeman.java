@@ -9,5 +9,10 @@ public class Pikeman extends Battler {
     public Pikeman(String name_id) {
         super("Копейщик", name_id, 10,5,9,true,true);
     }
+
+    @Override
+    public String getInfo() {
+        return "Я копейщик";
+    }
 }
 

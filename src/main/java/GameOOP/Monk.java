@@ -8,4 +8,9 @@ public class Monk extends Magi {
     public Monk(String name_id) {
         super("Монах", name_id, 10, 5, 10, 10, 7);
     }
+
+    @Override
+    public String getInfo() {
+        return "Я монах";
+    }
 }

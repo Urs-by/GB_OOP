@@ -9,6 +9,10 @@ public class Farmer extends Human {
         super("Крестьянин", name_id, 7, 3, 9);
     }
 
+    @Override
+    public String getInfo() {
+        return ("Я крестьянин :( ");
+    }
 
     public void prepares() {
         System.out.printf("%s %s заготавливает продукты", type, getName_id());

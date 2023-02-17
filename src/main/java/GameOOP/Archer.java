@@ -7,8 +7,10 @@ public class Archer extends Shooter {
 
     public Archer(String name_id) {
         super("Лучник", name_id, 10, 5, 7, 7, 10, 5, 25);
-
     }
 
-
+    @Override
+    public String getInfo() {
+        return "Я лучник-снайпер";
+    }
 }

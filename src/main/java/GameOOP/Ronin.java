@@ -15,6 +15,8 @@ public class Ronin extends Battler {
         System.out.println();
     }
 
-
-
+    @Override
+    public String getInfo() {
+        return "Я разбойник, ха ха ха";
+    }
 }

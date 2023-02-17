@@ -11,17 +11,8 @@ public class Arbalester extends Shooter {
         super("Арбалетчик",name_id, 10, 5, 7, 7, 5, 10, 25);
     }
 
-
-//    public Arbalester(String name) {
-//        super(name);
-//        super.type = "Арбалетчик";
-//        this.name_id = name_id;
-
-
-//    public Arbalester(String name) {
-//        super(name);
-//        super.type = "Арбалетчик";
-//        super.rapidity = 5;
-//        super.range = 10;
-//    }
+    @Override
+    public String getInfo() {
+        return "Я арбалетчик";
+    }
 }

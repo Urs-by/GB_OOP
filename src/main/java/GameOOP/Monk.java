@@ -11,6 +11,6 @@ public class Monk extends Magi {
 
     @Override
     public String getInfo() {
-        return "Я монах";
+        return "Я монах !";
     }
 }

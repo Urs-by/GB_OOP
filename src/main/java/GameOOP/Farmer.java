@@ -11,7 +11,7 @@ public class Farmer extends Human {
 
     @Override
     public String getInfo() {
-        return ("Я крестьянин :( ");
+        return ("Я крестьянин :(");
     }
 
     public void prepares() {

@@ -13,6 +13,6 @@ public class Arbalester extends Shooter {
 
     @Override
     public String getInfo() {
-        return "Я арбалетчик";
+        return "Я арбалетчик ->)";
     }
 }

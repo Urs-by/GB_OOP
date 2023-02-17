@@ -11,6 +11,6 @@ public class Archer extends Shooter {
 
     @Override
     public String getInfo() {
-        return "Я лучник-снайпер";
+        return "Я лучник-снайпер -)";
     }
 }

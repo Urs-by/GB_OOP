@@ -6,16 +6,17 @@ public class Ronin extends Battler {
         super(type, name_id, hp, damage, stamina, weapon, armor);
     }
 
+    public Ronin(String name_id) {
+        super("Разбойник",name_id, 8, 3,9,false,false);
+    }
+
     public void hide() {
         System.out.printf("%s %s прячется ", type, getName_id());
         System.out.println();
     }
 
-    public Ronin(String name_id) {
-        super(name_id);
-        super.type = "Разбойник";
-        super.weapon = false;
-        super.armor = false;
+    @Override
+    public String getInfo() {
+        return "Я разбойник, ха ха ха";
     }
-
 }

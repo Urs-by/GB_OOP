@@ -5,10 +5,12 @@ public class Witch extends Magi {
         super(type, name_id, hp, damage, stamina, heal, spoil);
     }
 
-    public Witch(String name) {
-        super(name);
-        super.type = "Колдун";
-        super.spoil = 10;
+    public Witch(String name_id) {
+        super("Колдун",name_id, 10,7,10,7,10);
     }
 
+    @Override
+    public String getInfo() {
+        return ("Я колдун !");
+    }
 }

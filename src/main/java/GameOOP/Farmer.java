@@ -6,8 +6,12 @@ public class Farmer extends Human {
     }
 
     public Farmer(String name_id) {
-        super(name_id);
-        super.type = "Крестьянин";
+        super("Крестьянин", name_id, 7, 3, 9);
+    }
+
+    @Override
+    public String getInfo() {
+        return ("Я крестьянин :(");
     }
 
     public void prepares() {

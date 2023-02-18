@@ -1,23 +1,26 @@
 package GameOOP;
 
-public class Shooter extends Human {
-    protected Integer sharpshooting = 5;
-    protected Integer rapidity;
-    protected Integer range;
-    protected Integer arrows = 25;
+public abstract class Shooter extends Human {
+    Integer sharpshooting, rapidity, range, arrows;
+
 
     public Shooter(String type, String name_id, Integer hp, Integer damage, Integer stamina, Integer sharpshooting, Integer rapidity, Integer range, Integer arrows) {
-        super(type, name_id, hp, damage, stamina);
+        super(type,name_id, hp, damage, stamina);
         this.sharpshooting = sharpshooting;
         this.rapidity = rapidity;
         this.range = range;
         this.arrows = arrows;
     }
 
-    public Shooter(String name) {
-        super.name_id = name;
-        super.type = "Стрелок";
+
+    public Shooter() {
+        super();
     }
+
+//    public Shooter(String name) {
+//        super.name_id = name;
+//        super.type = "Стрелок";
+//    }
 
     public void shoot() {
         System.out.printf("%s %s стреляет", type, getName_id());

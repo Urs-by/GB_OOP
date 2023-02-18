@@ -5,10 +5,12 @@ public class Monk extends Magi {
         super(type, name_id, hp, damage, stamina, heal, spoil);
     }
 
-    public Monk(String name) {
-        super(name);
-        super.type = "Монах";
-        super.heal = 10;
+    public Monk(String name_id) {
+        super("Монах", name_id, 10, 5, 10, 10, 7);
     }
 
+    @Override
+    public String getInfo() {
+        return "Я монах !";
+    }
 }

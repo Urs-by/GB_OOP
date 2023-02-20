@@ -15,15 +15,6 @@ public abstract class Human implements HumanInterface {
         this.speed = speed;
     }
 
-//    public Human(String type, String name, Integer hp, Integer damage, Integer protection) {
-//        this.type = type;
-//        this.name = name;
-//        this.hp = hp;
-//        this.damage = damage;
-//        this.protection = protection;
-//    }
-
-
     public Human(String name) {
         this.name = name;
     }
@@ -51,13 +42,13 @@ public abstract class Human implements HumanInterface {
     @Override
     public String toString() {
         return type + "{" +
-                "name= '" + name + '\'' +
+                "name = '" + name + '\'' +
                 ", attack = " + attack +
                 ", protection = " + protection +
-                ", hp= " + hp +
-                ", minDamage=" + minDamage +
-                ", maxDamage=" + maxDamage +
-                ", speed=" + speed;
+                ", hp = " + hp +
+                ", minDamage =" + minDamage +
+                ", maxDamage =" + maxDamage +
+                ", speed =" + speed;
     }
 
 

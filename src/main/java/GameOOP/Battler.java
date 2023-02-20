@@ -22,25 +22,4 @@ public abstract class Battler extends Human {
 //        System.out.println();
 //    }
 
-    //
-//    public Battler(String name_id) {
-//        super(name_id);
-//        super.type = "Боец";
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return type + "{" +
-//                "name_id='" + name_id + '\'' +
-//                ", hp=" + hp +
-//                ", damage=" + damage +
-//                ", stamina=" + stamina +
-//                ", weapon=" + weapon +
-//                ", armor=" + armor +
-//                '}';
-//    }
-//
-
-
-
 }

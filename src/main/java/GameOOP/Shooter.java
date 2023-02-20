@@ -19,10 +19,6 @@ public abstract class Shooter extends Human {
                 '}';
     }
 
-    //    public Shooter(String name) {
-//        super.name_id = name;
-//        super.type = "Стрелок";
-//    }
 
     public void shoot() {
         System.out.printf("%s %s стреляет", type, getName());

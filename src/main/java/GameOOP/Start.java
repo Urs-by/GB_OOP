@@ -1,6 +1,5 @@
 package GameOOP;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 public class Start {
@@ -12,7 +11,8 @@ public class Start {
             String className = getClassHero();
             Human hero = heroesUnit(className);
             System.out.printf("%s ",hero.getInfo());
-            System.out.println(hero.getName_id());
+            System.out.println(hero.getName());
+            System.out.println(hero);
             //System.out.println(hero);
         }
     }

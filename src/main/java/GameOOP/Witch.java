@@ -1,12 +1,12 @@
 package GameOOP;
 
 public class Witch extends Magi {
-    public Witch(String type, String name_id, Integer hp, Integer damage, Integer stamina, Integer heal, Integer spoil) {
-        super(type, name_id, hp, damage, stamina, heal, spoil);
+    public Witch(String type, String name, Integer attack, Integer protection, Integer hp, Integer minDamage, Integer maxDamage, Integer speed, Integer magic) {
+        super(type, name, attack, protection, hp, minDamage, maxDamage, speed, magic);
     }
 
-    public Witch(String name_id) {
-        super("Колдун",name_id, 10,7,10,7,10);
+    public Witch(String name) {
+        super("Колдун",name,17,12,30,-5,-5,9,1);
     }
 
     @Override

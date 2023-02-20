@@ -1,54 +1,65 @@
 package GameOOP;
 
-import java.util.Random;
-
 public abstract class Human implements HumanInterface {
-    protected String type, name_id;
-    protected Integer hp, damage, stamina;
+    protected String type, name;
+    protected Integer attack, protection, hp, minDamage, maxDamage, speed;
 
-
-    public Human(String type, String name_id, Integer hp, Integer damage, Integer stamina) {
+    public Human(String type, String name, Integer attack, Integer protection, Integer hp, Integer minDamage, Integer maxDamage, Integer speed) {
         this.type = type;
-        this.name_id = name_id;
+        this.name = name;
+        this.attack = attack;
+        this.protection = protection;
         this.hp = hp;
-        this.damage = damage;
-        this.stamina = stamina;
+        this.minDamage = minDamage;
+        this.maxDamage = maxDamage;
+        this.speed = speed;
     }
 
+//    public Human(String type, String name, Integer hp, Integer damage, Integer protection) {
+//        this.type = type;
+//        this.name = name;
+//        this.hp = hp;
+//        this.damage = damage;
+//        this.protection = protection;
+//    }
 
-    public Human(String name_id) {
-        this.name_id = name_id;
+
+    public Human(String name) {
+        this.name = name;
     }
 
     public Human() {
     }
 
-    public void run() {
-        System.out.printf("%s %s бежит", type, getName_id());
-        System.out.println();
+//    public void run() {
+//        System.out.printf("%s %s бежит", type, getName());
+//        System.out.println();
+//
+//    }
 
-    }
-
-    public void move() {
-        System.out.printf("%s %s идет", type, getName_id());
-        System.out.println();
-    }
-
-    public void rest() {
-        System.out.printf("%s %s отдыхает", type, getName_id());
-        System.out.println();
-    }
+//    public void move() {
+//        System.out.printf("%s %s идет", type, getName());
+//        System.out.println();
+//    }
+//
+//    public void rest() {
+//        System.out.printf("%s %s отдыхает", type, getName());
+//        System.out.println();
+//    }
 
 
     @Override
     public String toString() {
         return type + "{" +
-                "name_id='" + name_id + '\'' +
-                ", hp=" + hp +
-                ", damage=" + damage +
-                ", stamina=" + stamina +
-                '}';
+                "name= '" + name + '\'' +
+                ", attack = " + attack +
+                ", protection = " + protection +
+                ", hp= " + hp +
+                ", minDamage=" + minDamage +
+                ", maxDamage=" + maxDamage +
+                ", speed=" + speed;
     }
+
 
     @Override
     public String getInfo() {
@@ -59,14 +70,28 @@ public abstract class Human implements HumanInterface {
     public void step() {
     }
 
-
-
-    public String getName_id() {
-        return name_id;
+    public String getName() {
+        return name;
     }
 
-    public void setName_id(String name_id) {
-        this.name_id = name_id;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getAttack() {
+        return attack;
+    }
+
+    public void setAttack(Integer attack) {
+        this.attack = attack;
+    }
+
+    public Integer getProtection() {
+        return protection;
+    }
+
+    public void setProtection(Integer protection) {
+        this.protection = protection;
     }
 
     public Integer getHp() {
@@ -74,24 +99,30 @@ public abstract class Human implements HumanInterface {
     }
 
     public void setHp(Integer hp) {
-        if (hp >= 0) this.hp = hp;
+        this.hp = hp;
     }
 
-    public Integer getDamage() {
-        return damage;
+    public Integer getMinDamage() {
+        return minDamage;
     }
 
-    public void setDamage(Integer damage) {
-        this.damage = damage;
+    public void setMinDamage(Integer minDamage) {
+        this.minDamage = minDamage;
     }
 
-    public Integer getStamina() {
-        return stamina;
+    public Integer getMaxDamage() {
+        return maxDamage;
     }
 
-    public void setStamina(Integer stamina) {
-        this.stamina = stamina;
+    public void setMaxDamage(Integer maxDamage) {
+        this.maxDamage = maxDamage;
     }
 
+    public Integer getSpeed() {
+        return speed;
+    }
 
+    public void setSpeed(Integer speed) {
+        this.speed = speed;
+    }
 }

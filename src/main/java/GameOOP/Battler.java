@@ -1,22 +1,26 @@
 package GameOOP;
 
 public abstract class Battler extends Human {
-    Boolean weapon, armor;
 
-    public Battler(String type, String name_id, Integer hp, Integer damage, Integer stamina, Boolean weapon, Boolean armor) {
-        super(type, name_id, hp, damage, stamina);
-        this.weapon = weapon;
-        this.armor = armor;
+
+    public Battler(String type, String name, Integer attack, Integer protection, Integer hp, Integer minDamage, Integer maxDamage, Integer speed) {
+        super(type, name, attack, protection, hp, minDamage, maxDamage, speed);
+
     }
 
-    public Battler() {
-        super();
+    public Battler(String name) {
+        super(name);
     }
 
-    public void attacks() {
-        System.out.printf("%s %s аттакует", type, getName_id());
-        System.out.println();
+    @Override
+    public String toString() {
+        return super.toString() + '}';
     }
+
+//    public void attacks() {
+//        System.out.printf("%s %s аттакует", type, getName());
+//        System.out.println();
+//    }
 
     //
 //    public Battler(String name_id) {
@@ -36,20 +40,7 @@ public abstract class Battler extends Human {
 //                '}';
 //    }
 //
-    public Boolean getWeapon() {
-        return weapon;
-    }
 
 
-    public void setWeapon(Boolean weapon) {
-        this.weapon = weapon;
-    }
 
-    public Boolean getArmor() {
-        return armor;
-    }
-
-    public void setArmor(Boolean armor) {
-        this.armor = armor;
-    }
 }

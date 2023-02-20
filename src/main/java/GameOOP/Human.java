@@ -1,22 +1,27 @@
 package GameOOP;
 
 public abstract class Human implements HumanInterface {
-    protected String type, name;
-    protected Integer attack, protection, hp, minDamage, maxDamage, speed;
+    protected String type, name, team;
+    protected Integer attack, protection, hp, minDamage, maxDamage, speed, x, y;
 
-    public Human(String type, String name, Integer attack, Integer protection, Integer hp, Integer minDamage, Integer maxDamage, Integer speed) {
+    public Human(String type, String name, String team, Integer attack, Integer protection, Integer hp, Integer minDamage, Integer maxDamage, Integer speed, Integer x, Integer y) {
         this.type = type;
         this.name = name;
+        this.team = team;
         this.attack = attack;
         this.protection = protection;
         this.hp = hp;
         this.minDamage = minDamage;
         this.maxDamage = maxDamage;
         this.speed = speed;
+        this.x = x;
+        this.y = y;
     }
 
     public Human(String name) {
         this.name = name;
+        this.x = 0;
+        this.y = 0;
     }
 
     public Human() {
@@ -43,12 +48,15 @@ public abstract class Human implements HumanInterface {
     public String toString() {
         return type + "{" +
                 "name = '" + name + '\'' +
+                ", team = " + team +
                 ", attack = " + attack +
                 ", protection = " + protection +
                 ", hp = " + hp +
-                ", minDamage =" + minDamage +
-                ", maxDamage =" + maxDamage +
-                ", speed =" + speed;
+                ", minDamage = " + minDamage +
+                ", maxDamage = " + maxDamage +
+                ", speed = " + speed +
+                ", x = " + x+
+                ", y = " + y;
     }
 
 
@@ -59,6 +67,30 @@ public abstract class Human implements HumanInterface {
 
     @Override
     public void step() {
+    }
+
+    public String getTeam() {
+        return team;
+    }
+
+    public void setTeam(String team) {
+        this.team = team;
+    }
+
+    public Integer getX() {
+        return x;
+    }
+
+    public void setX(Integer x) {
+        this.x = x;
+    }
+
+    public Integer getY() {
+        return y;
+    }
+
+    public void setY(Integer y) {
+        this.y = y;
     }
 
     public String getName() {

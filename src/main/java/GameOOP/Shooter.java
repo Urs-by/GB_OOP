@@ -3,8 +3,8 @@ package GameOOP;
 public abstract class Shooter extends Human {
     Integer shots;
 
-    public Shooter(String type, String name, Integer attack, Integer protection, Integer hp, Integer minDamage, Integer maxDamage, Integer speed, Integer shots) {
-        super(type, name, attack, protection, hp, minDamage, maxDamage, speed);
+    public Shooter(String type, String name, String team, Integer attack, Integer protection, Integer hp, Integer minDamage, Integer maxDamage, Integer speed, Integer x, Integer y, Integer shots) {
+        super(type, name, team, attack, protection, hp, minDamage, maxDamage, speed, x, y);
         this.shots = shots;
     }
 

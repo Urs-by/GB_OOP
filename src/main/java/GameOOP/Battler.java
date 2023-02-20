@@ -2,10 +2,8 @@ package GameOOP;
 
 public abstract class Battler extends Human {
 
-
-    public Battler(String type, String name, Integer attack, Integer protection, Integer hp, Integer minDamage, Integer maxDamage, Integer speed) {
-        super(type, name, attack, protection, hp, minDamage, maxDamage, speed);
-
+    public Battler(String type, String name, String team, Integer attack, Integer protection, Integer hp, Integer minDamage, Integer maxDamage, Integer speed, Integer x, Integer y) {
+        super(type, name, team, attack, protection, hp, minDamage, maxDamage, speed, x, y);
     }
 
     public Battler(String name) {

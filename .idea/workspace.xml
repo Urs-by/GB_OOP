@@ -4,16 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a90566df-c97e-42b6-8f28-9e423cec8587" name="Changes" comment="heroes unified">
-      <change afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Team1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Team2.java" afterDir="false" />
+    <list default="true" id="a90566df-c97e-42b6-8f28-9e423cec8587" name="Changes" comment="creating  and sort 2 teams">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Arbalester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Arbalester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Archer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Battler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Battler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/HeroClasses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/HeroClasses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Farmer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Farmer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Human.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Names_hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Names_hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Magi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Magi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Monk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Monk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Pikeman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Pikeman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Ronin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Ronin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Shooter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Shooter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Start.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Witch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Witch.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676883657254</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="creating  and sort 2 teams">
+      <created>1676897167693</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1676897167693</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -159,6 +170,7 @@
     <MESSAGE value="created GameInterface, Enum for generation namesHero" />
     <MESSAGE value="created generator random class" />
     <MESSAGE value="heroes unified" />
-    <option name="LAST_COMMIT_MESSAGE" value="heroes unified" />
+    <MESSAGE value="creating  and sort 2 teams" />
+    <option name="LAST_COMMIT_MESSAGE" value="creating  and sort 2 teams" />
   </component>
 </project>

@@ -3,8 +3,8 @@ package GameOOP;
 public class Archer extends Shooter {
 
 
-    public Archer(String name) {
-        super("Лучник", name, 12, 1, 15, 8, 10, 9, 32);
+    public Archer(String name, String team, Integer x, Integer y) {
+        super("Лучник", name, team, 12, 1, 15, 8, 10, 9, x, y, 32);
     }
 
     @Override

@@ -2,13 +2,12 @@ package GameOOP;
 
 public class Arbalester extends Shooter {
 
+    public Arbalester(String type, String name, String team, Integer attack, Integer protection, Integer hp, Integer minDamage, Integer maxDamage, Integer speed, Integer x, Integer y, Integer shots) {
+        super(type, name, team, attack, protection, hp, minDamage, maxDamage, speed, x, y, shots);
+    }
 
-//    public Arbalester(String type, String name_id, Integer hp, Integer damage, Integer stamina, Integer sharpshooting, Integer rapidity, Integer range, Integer arrows) {
-//        super(type, name_id, hp, damage, stamina, sharpshooting, rapidity, range, arrows);
-//    }
-
-    public Arbalester(String name_id) {
-        super("Арбалетчик",name_id, 10, 5, 7, 7, 5, 10, 25);
+    public Arbalester(String name, String team, Integer x, Integer y) {
+        super("Арбалетчик", name, team, 6, 3, 10, 2, 3, 4, x, y, 16);
     }
 
     @Override

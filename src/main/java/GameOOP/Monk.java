@@ -1,12 +1,12 @@
 package GameOOP;
 
 public class Monk extends Magi {
-    public Monk(String type, String name_id, Integer hp, Integer damage, Integer stamina, Integer heal, Integer spoil) {
-        super(type, name_id, hp, damage, stamina, heal, spoil);
+    public Monk(String type, String name, String team, Integer attack, Integer protection, Integer hp, Integer minDamage, Integer maxDamage, Integer speed, Integer x, Integer y, Integer magic) {
+        super(type, name, team, attack, protection, hp, minDamage, maxDamage, speed, x, y, magic);
     }
 
-    public Monk(String name_id) {
-        super("Монах", name_id, 10, 5, 10, 10, 7);
+    public Monk(String name, String team, Integer x, Integer y) {
+        super("Монах", name, team, 12, 7, 30, -4, -4, 5, x, y,1);
     }
 
     @Override

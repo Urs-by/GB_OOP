@@ -2,12 +2,12 @@ package GameOOP;
 
 public class Pikeman extends Battler {
 
-    public Pikeman(String type, String name_id, Integer hp, Integer damage, Integer stamina, Boolean weapon, Boolean armor) {
-        super(type, name_id, hp, damage, stamina, weapon, armor);
+    public Pikeman(String type, String name, String team, Integer attack, Integer protection, Integer hp, Integer minDamage, Integer maxDamage, Integer speed, Integer x, Integer y) {
+        super(type, name, team, attack, protection, hp, minDamage, maxDamage, speed, x, y);
     }
 
-    public Pikeman(String name_id) {
-        super("Копейщик", name_id, 10,5,9,true,true);
+    public Pikeman(String name, String team, Integer x, Integer y) {
+        super("Копейщик", name, team, 4, 5, 10, 1, 3, 4, x, y);
     }
 
     @Override

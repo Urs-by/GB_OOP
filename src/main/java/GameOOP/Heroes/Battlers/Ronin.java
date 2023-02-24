@@ -1,4 +1,4 @@
-package GameOOP;
+package GameOOP.Heroes;
 
 public class Ronin extends Battler {
 

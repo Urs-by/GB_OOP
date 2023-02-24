@@ -1,4 +1,6 @@
-package GameOOP;
+package GameOOP.Heroes;
+
+import GameOOP.Human;
 
 public abstract class Magi extends Human {
     Integer magic;

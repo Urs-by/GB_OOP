@@ -1,4 +1,6 @@
-package GameOOP;
+package GameOOP.Heroes.Magi;
+
+import GameOOP.Heroes.Magi;
 
 public class Witch extends Magi {
     public Witch(String type, String name, String team, Integer attack, Integer protection, Integer hp, Integer minDamage, Integer maxDamage, Integer speed, Integer x, Integer y, Integer magic) {

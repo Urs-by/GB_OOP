@@ -1,4 +1,4 @@
-package GameOOP;
+package GameOOP.Heroes;
 
 public class Pikeman extends Battler {
 

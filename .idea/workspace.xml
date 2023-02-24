@@ -4,20 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a90566df-c97e-42b6-8f28-9e423cec8587" name="Changes" comment="creating  and sort 2 teams">
+    <list default="true" id="a90566df-c97e-42b6-8f28-9e423cec8587" name="Changes" comment="Add name Teams and coordinates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Arbalester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Arbalester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Archer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Battler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Battler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Farmer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Farmer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Coordinates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Heroes/Battler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Heroes/Battler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Heroes/Battlers/Pikeman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Heroes/Battlers/Pikeman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Heroes/Battlers/Ronin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Heroes/Battlers/Ronin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Heroes/Farmer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Heroes/Farmer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Heroes/Magi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Heroes/Magi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Heroes/Shooter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Heroes/Shooter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Heroes/Shooters/Arbalester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Heroes/Shooters/Arbalester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Heroes/Shooters/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Heroes/Shooters/Archer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Heroes/Sorcerers/Monk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Heroes/Sorcerers/Monk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Heroes/Sorcerers/Witch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Heroes/Sorcerers/Witch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Human.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Magi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Magi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Monk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Monk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Pikeman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Pikeman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Ronin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Ronin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Shooter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Shooter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/HumanInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/HumanInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Start.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameOOP/Witch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameOOP/Witch.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +30,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -63,22 +65,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ENABLED_META": "false",
-    "META_SYNC_MODE": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ENABLED_META&quot;: &quot;false&quot;,
+    &quot;META_SYNC_MODE&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\korotkevich\gb_java\GB_OOP\src\main\java\GameOOP\SuperClass" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GameOOP.Start" />
       <module name="OOP" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="GameOOP.*" />
+          <option name="PATTERN" value="GameOOP.Heroes.Battlers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

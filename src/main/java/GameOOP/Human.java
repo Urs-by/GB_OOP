@@ -1,10 +1,17 @@
 package GameOOP;
 
-public abstract class Human implements HumanInterface {
-    protected String type, name, team;
-    protected Integer attack, protection, hp, minDamage, maxDamage, speed, x, y;
+import java.util.ArrayList;
 
-    public Human(String type, String name, String team, Integer attack, Integer protection, Integer hp, Integer minDamage, Integer maxDamage, Integer speed, Integer x, Integer y) {
+public abstract class Human  implements HumanInterface  {
+    protected String type, name, team;
+    protected int attack, protection,  minDamage, maxDamage, speed;
+    protected float hp;
+    public Coordinates position ;
+
+
+
+    public Human(String type, String name, String team, int attack, int protection, int hp,
+                 int minDamage, int maxDamage, int speed, Coordinates position) {
         this.type = type;
         this.name = name;
         this.team = team;
@@ -14,34 +21,20 @@ public abstract class Human implements HumanInterface {
         this.minDamage = minDamage;
         this.maxDamage = maxDamage;
         this.speed = speed;
-        this.x = x;
-        this.y = y;
+        this.position = position;
     }
+
 
     public Human(String name) {
         this.name = name;
-        this.x = 0;
-        this.y = 0;
+//        this.x = 0;
+//        this.y = 0;
     }
+
 
     public Human() {
     }
 
-//    public void run() {
-//        System.out.printf("%s %s бежит", type, getName());
-//        System.out.println();
-//
-//    }
-
-//    public void move() {
-//        System.out.printf("%s %s идет", type, getName());
-//        System.out.println();
-//    }
-//
-//    public void rest() {
-//        System.out.printf("%s %s отдыхает", type, getName());
-//        System.out.println();
-//    }
 
 
     @Override
@@ -55,8 +48,8 @@ public abstract class Human implements HumanInterface {
                 ", minDamage = " + minDamage +
                 ", maxDamage = " + maxDamage +
                 ", speed = " + speed +
-                ", x = " + x+
-                ", y = " + y;
+                ", x = " + position.posX+
+                ", y = " + position.posY;
     }
 
 
@@ -65,9 +58,20 @@ public abstract class Human implements HumanInterface {
         return "Я человек ";
     }
 
-    @Override
-    public void step() {
+    public int getNearEnemyIndex(ArrayList<Human>team){
+        int index =0;
+        double min = 1000;
+        for (int i = 0; i < team.size(); i++) {
+            if (min > position.getDistance(team.get(i).position)) {
+                if (team.get(i).hp > 0) {
+                    min = position.getDistance(team.get(i).position);
+                    index = i;
+                }
+            }
+        }
+        return index;
     }
+
 
     public String getTeam() {
         return team;
@@ -77,20 +81,13 @@ public abstract class Human implements HumanInterface {
         this.team = team;
     }
 
-    public Integer getX() {
-        return x;
+
+    public String getType() {
+        return type;
     }
 
-    public void setX(Integer x) {
-        this.x = x;
-    }
-
-    public Integer getY() {
-        return y;
-    }
-
-    public void setY(Integer y) {
-        this.y = y;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getName() {
@@ -117,11 +114,11 @@ public abstract class Human implements HumanInterface {
         this.protection = protection;
     }
 
-    public Integer getHp() {
+    public float getHp() {
         return hp;
     }
 
-    public void setHp(Integer hp) {
+    public void setHp(float hp) {
         this.hp = hp;
     }
 

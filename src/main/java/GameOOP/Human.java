@@ -1,13 +1,14 @@
 package GameOOP;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 
-public abstract class Human  implements HumanInterface  {
+public abstract class Human implements HumanInterface {
     protected String type, name, team;
-    protected int attack, protection,  minDamage, maxDamage, speed;
+    protected int attack, protection, minDamage, maxDamage, speed;
     protected float hp;
-    public Coordinates position ;
-
+    public Coordinates position;
+    protected String state;
 
 
     public Human(String type, String name, String team, int attack, int protection, int hp,
@@ -22,6 +23,8 @@ public abstract class Human  implements HumanInterface  {
         this.maxDamage = maxDamage;
         this.speed = speed;
         this.position = position;
+        state = "Жив";
+
     }
 
 
@@ -36,7 +39,6 @@ public abstract class Human  implements HumanInterface  {
     }
 
 
-
     @Override
     public String toString() {
         return type + "{" +
@@ -48,8 +50,9 @@ public abstract class Human  implements HumanInterface  {
                 ", minDamage = " + minDamage +
                 ", maxDamage = " + maxDamage +
                 ", speed = " + speed +
-                ", x = " + position.posX+
-                ", y = " + position.posY;
+                ", x = " + position.posX +
+                ", y = " + position.posY +
+                ", state = " + state;
     }
 
 
@@ -58,20 +61,27 @@ public abstract class Human  implements HumanInterface  {
         return "Я человек ";
     }
 
-    public int getNearEnemyIndex(ArrayList<Human>team){
-        int index =0;
+    // поиск ближайшего живого противника
+    public int getNearEnemyIndex(ArrayList<Human> team) {
+        int index = -1;
         double min = 1000;
         for (int i = 0; i < team.size(); i++) {
-            if (min > position.getDistance(team.get(i).position)) {
-                if (team.get(i).hp > 0) {
-                    min = position.getDistance(team.get(i).position);
-                    index = i;
-                }
+            if (min > position.getDistance(team.get(i).position ) && !team.get(i).state.contains("Мертв")) {
+                min = position.getDistance(team.get(i).position);
+                index = i;
             }
         }
+
         return index;
     }
 
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
 
     public String getTeam() {
         return team;

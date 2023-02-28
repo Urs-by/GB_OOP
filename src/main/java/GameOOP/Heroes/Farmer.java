@@ -9,7 +9,7 @@ public class Farmer extends Human {
     private Integer delivery;
 
     public Farmer(String type, String name, String team, Integer attack, Integer protection, Integer hp,
-                  Integer minDamage, Integer maxDamage, Integer speed, Coordinates position, Integer delivery) {
+                  Integer minDamage, Integer maxDamage, Integer speed, Coordinates position, Integer delivery, String state) {
         super(type, name, team, attack, protection, hp, minDamage, maxDamage, speed, position);
         this.delivery = delivery;
     }
@@ -24,6 +24,7 @@ public class Farmer extends Human {
         this.delivery = 1;
     }
 
+
     @Override
     public String getInfo() {
         return ("Я крестьянин :(");
@@ -33,11 +34,15 @@ public class Farmer extends Human {
 
     @Override
     public void step(ArrayList<Human> team1, ArrayList<Human> team2) {
-
+        if(!state.contains("Мертв")){
+            setState("Жив");
+            brings();}
+//        System.out.println();
     }
 
     @Override
     public String toString() {
+
         return super.toString() + ", delivery=" + delivery + '}';
     }
 
@@ -46,9 +51,9 @@ public class Farmer extends Human {
 //        System.out.println();
 //    }
 //
-//    public void brings() {
-//        System.out.printf("%s %s подносит оружие ", type, getName());
-//        System.out.println();
-//    }
+    public void brings() {
+        System.out.printf("%s %s из команды %s подносит оружие , состояние: %s", type, getName(), getTeam(), getState());
+        System.out.println();
+    }
 
 }

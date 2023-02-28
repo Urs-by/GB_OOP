@@ -16,7 +16,7 @@ public class Arbalester extends Shooter {
     }
 
     public Arbalester(String name, String team, Coordinates position) {
-        super("Арбалетчик", name, team, 6, 3, 10, 2, 3, 4, position, 16);
+        super("Арбалетчик", name, team, 6, 3, 10, 4, 6, 4, position, 16);
     }
 
     @Override

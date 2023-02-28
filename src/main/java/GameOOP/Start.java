@@ -11,41 +11,42 @@ import GameOOP.Heroes.Battlers.Ronin;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Start {
     public static void main(String[] args) {
 
 
         ArrayList<Human> team1 = new ArrayList<>();
-        System.out.println("Team1: ");
+//        System.out.println("Team1: ");
 
         // Создание команды белых
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             String className = getClassTeam1();
             Human hero = heroesUnit(className, "черные", new Coordinates(0, i+1) {});
             team1.add(hero);
-            System.out.printf("%s ", hero.getInfo());
-            System.out.println(hero.getName());
-            //System.out.println(hero);
+//            System.out.printf("%s ", hero.getInfo());
+//            System.out.println(hero.getName());
+//            System.out.println(hero);
 
         }
 
         System.out.println();
         ArrayList<Human> team2 = new ArrayList<>();
-        System.out.println("Team2: ");
+//        System.out.println("Team2: ");
         // создание команды черных
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             String className = getClassTeam2();
             Human hero = heroesUnit(className, "белые", new Coordinates(10, i+1) { });
             team2.add(hero);
-            System.out.printf("%s ", hero.getInfo());
-            System.out.println(hero.getName());
+//            System.out.printf("%s ", hero.getInfo());
+//            System.out.println(hero.getName());
             //System.out.println(hero);
         }
 
         // список всех игроков
         ArrayList<Human> allTeam = new ArrayList<>(team1);
-        for (int i = 0; i < team2.size() - 1; i++) {
+        for (int i = 0; i < team2.size() ; i++) {
             allTeam.add(team2.get(i));
         }
 
@@ -66,16 +67,38 @@ public class Start {
         }
 
         System.out.println();
-        System.out.println(" Аттака лучников");
-        for (Human human :allTeam) {
-            if(team1.contains(human)) human.step(team1, team2);
-            else human.step(team2, team1);
+
+        while (true) {
+
+            Scanner scan = new Scanner(System.in);
+            scan.nextLine();
+            for (Human human : allTeam) {
+                if (team1.contains(human)) {
+                    human.step(team1, team2);
+                    if (dead(team2)){
+                        System.out.printf("Команда %s, победила!", team1.get(0).getTeam());
+                        break;
+                    }
+                }
+                else{
+                    human.step(team2, team1);
+                    if (dead(team1)){
+                        System.out.printf("Команда %s, победила!", team2.get(0).getTeam());
+                        break;
+                    }
+                }
+            }
         }
-
-
-
     }
 
+    // проверка на состояния команды
+    private static boolean dead (ArrayList<Human> team){
+
+        for (int i = 0; i < team.size(); i++) {
+            if(!team.get(i).getState().contains("Мертв")) return false;
+        }
+        return true;
+    }
 
 
 

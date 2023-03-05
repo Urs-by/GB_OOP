@@ -27,7 +27,7 @@ public class Farmer extends Human {
 
     @Override
     public String getInfo() {
-        return ("Я крестьянин :(");
+        return ("F крестьянин :(");
     }
 
 
@@ -36,8 +36,8 @@ public class Farmer extends Human {
     public void step(ArrayList<Human> team1, ArrayList<Human> team2) {
         if(!state.contains("Мертв")){
             setState("Жив");
-            brings();}
-//        System.out.println();
+        }
+
     }
 
     @Override

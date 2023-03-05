@@ -45,12 +45,11 @@ public abstract class Shooter extends Human {
                 System.out.println("Все противники мертвы");
                 return;
             } else{
-                shoot();
-
                 // вычисляем расстояние до врага
-                System.out.printf("Жертва, %s", team2.get(indexEnemy));
-                System.out.println();
+
                 Double distanceToEnemy = position.getDistance(team2.get(indexEnemy).position);
+                System.out.printf("Sooters distance, %f", distanceToEnemy);
+                System.out.println();
 
                 // расчет урона
                 float damage = (team2.get(indexEnemy).getProtection() - attack > 0) ? minDamage :
@@ -61,26 +60,15 @@ public abstract class Shooter extends Human {
                     team2.get(indexEnemy).setHp(team2.get(indexEnemy).getHp() - damage);
                     if (team2.get(indexEnemy).getHp() < 0) {
                         team2.get(indexEnemy).setState("Мертв");
-                        System.out.printf("%s, %s - убит", team2.get(indexEnemy).getType(), team2.get(indexEnemy).getName());
-                        System.out.println();
-
-                    } else {
-                        System.out.printf("Урон %f, осталось НР = %f", damage, team2.get(indexEnemy).getHp());
-                        System.out.println();
                     }
-
                 } else {
                     team2.get(indexEnemy).setHp(team2.get(indexEnemy).getHp() - damage * 0.5f);
                     if (team2.get(indexEnemy).getHp() <= 0) {
                         team2.get(indexEnemy).setState("Мертв");
-                        System.out.printf("%s, %s - убит", team2.get(indexEnemy).getType(), team2.get(indexEnemy).getName());
-                        System.out.println();
-                    } else {
-                        System.out.printf("Урон %f, осталось НР = %f", damage * 0.5f, team2.get(indexEnemy).getHp());
-                        System.out.println();
+//
                     }
                 }
-
+                // поиск своего крестьянина
                 if (findFarmer(team1) == -1) {
                     this.shots -= 1;
                 }

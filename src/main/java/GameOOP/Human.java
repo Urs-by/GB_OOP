@@ -42,17 +42,18 @@ public abstract class Human implements HumanInterface {
     @Override
     public String toString() {
         return type + "{" +
-                "name = '" + name + '\'' +
-                ", team = " + team +
-                ", attack = " + attack +
-                ", protection = " + protection +
-                ", hp = " + hp +
-                ", minDamage = " + minDamage +
-                ", maxDamage = " + maxDamage +
-                ", speed = " + speed +
+                "Nm = " + name + '\'' +
+
+                ", At = " + attack +
+                ", Pr = " + protection +
+                ", Hp = " + hp +
+
+
                 ", x = " + position.posX +
                 ", y = " + position.posY +
-                ", state = " + state;
+
+                ", ST = " + state;
+
     }
 
 
@@ -67,13 +68,15 @@ public abstract class Human implements HumanInterface {
         double min = 1000;
         for (int i = 0; i < team.size(); i++) {
             if (min > position.getDistance(team.get(i).position ) && !team.get(i).state.contains("Мертв")) {
+
                 min = position.getDistance(team.get(i).position);
                 index = i;
             }
         }
-
         return index;
     }
+
+
 
     public String getState() {
         return state;

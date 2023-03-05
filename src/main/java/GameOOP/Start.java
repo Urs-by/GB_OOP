@@ -14,43 +14,42 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Start {
+    public static ArrayList<Human> team1 = new ArrayList<>();
+    public static ArrayList<Human> team2 = new ArrayList<>();
+    public static ArrayList<Human> allTeam = new ArrayList<>(team1);
+
+    public static ArrayList<Coordinates> gameField = new ArrayList<>();
+
     public static void main(String[] args) {
 
 
-        ArrayList<Human> team1 = new ArrayList<>();
-//        System.out.println("Team1: ");
 
-        // Создание команды белых
-        for (int i = 0; i < 5; i++) {
+
+        // Создание команды зеленых
+        for (int i = 0; i < 10; i++) {
             String className = getClassTeam1();
-            Human hero = heroesUnit(className, "черные", new Coordinates(0, i+1) {});
+            Human hero = heroesUnit(className, "Зеленые", new Coordinates(i + 1, 1) {});
             team1.add(hero);
-//            System.out.printf("%s ", hero.getInfo());
-//            System.out.println(hero.getName());
-//            System.out.println(hero);
-
         }
 
         System.out.println();
-        ArrayList<Human> team2 = new ArrayList<>();
-//        System.out.println("Team2: ");
-        // создание команды черных
-        for (int i = 0; i < 5; i++) {
+
+
+        // создание команды синих
+        for (int i = 0; i < 10; i++) {
             String className = getClassTeam2();
-            Human hero = heroesUnit(className, "белые", new Coordinates(10, i+1) { });
+            Human hero = heroesUnit(className, "Синие", new Coordinates(i + 1, 10) {});
             team2.add(hero);
-//            System.out.printf("%s ", hero.getInfo());
-//            System.out.println(hero.getName());
-            //System.out.println(hero);
         }
 
         // список всех игроков
-        ArrayList<Human> allTeam = new ArrayList<>(team1);
-        for (int i = 0; i < team2.size() ; i++) {
+        for (int i = 0; i < team2.size(); i++) {
+            allTeam.add(team1.get(i));
             allTeam.add(team2.get(i));
+
         }
 
-         // сортировка всех игроков по скорости
+        // сортировка всех игроков по скорости
         allTeam.sort(new Comparator<Human>() {
             @Override
             public int compare(Human o1, Human o2) {
@@ -61,28 +60,28 @@ public class Start {
                 return o2.getSpeed() - o1.getSpeed();
             }
         });
-        System.out.println("Игроки по скорости:");
-        for (int i = 0; i < allTeam.size(); i++) {
-            System.out.println(allTeam.get(i));
-        }
+//        //System.out.println("Игроки по скорости:");
+//        for (int i = 0; i < allTeam.size(); i++) {
+//            System.out.println(allTeam.get(i));
+//        }
 
-        System.out.println();
+
 
         while (true) {
-
+            View.view();
             Scanner scan = new Scanner(System.in);
             scan.nextLine();
+
             for (Human human : allTeam) {
                 if (team1.contains(human)) {
                     human.step(team1, team2);
-                    if (dead(team2)){
+                    if (dead(team2)) {
                         System.out.printf("Команда %s, победила!", team1.get(0).getTeam());
                         break;
                     }
-                }
-                else{
+                } else {
                     human.step(team2, team1);
-                    if (dead(team1)){
+                    if (dead(team1)) {
                         System.out.printf("Команда %s, победила!", team2.get(0).getTeam());
                         break;
                     }
@@ -92,14 +91,13 @@ public class Start {
     }
 
     // проверка на состояния команды
-    private static boolean dead (ArrayList<Human> team){
+    private static boolean dead(ArrayList<Human> team) {
 
         for (int i = 0; i < team.size(); i++) {
-            if(!team.get(i).getState().contains("Мертв")) return false;
+            if (!team.get(i).getState().contains("Мертв")) return false;
         }
         return true;
     }
-
 
 
     private static String getNamesHero() {

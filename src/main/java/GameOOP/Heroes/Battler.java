@@ -55,29 +55,38 @@ public abstract class Battler extends Human {
     public void step(ArrayList<Human> team1, ArrayList<Human> team2) {
         // поиск ближайшего противник
         int nearEnemyIndex = getNearEnemyIndex(team2);
-        // поиск по горизонтали координаты противника
-        int enemyPosY = team2.get(nearEnemyIndex).position.getPosY();
-        // определение направления движения
-        int horizontStep = goLeft(enemyPosY);
-        // определение дистанции до врага
-        Double distanceToEnemy = position.getDistance(team2.get(nearEnemyIndex).position);
-        // если дистанция меньше 2х, атака
-        if (distanceToEnemy <= 2){
-            // атака
-            attac(team2, nearEnemyIndex );
 
-        //  иначе если впереди никого нет, передвигаемся на 1 шаг
-        } else {
-            if (!state.contains("Мертв") && freeForvard(team1, horizontStep)) {
-                position.setPosY(position.getPosY() + horizontStep);
-            // если сверху никого нет и не граница поля поднимаемся на шаг наверх
-            } else if (!state.contains("Мертв") && freeUp(team1, 1) && position.getPosX() != 1) {
-                position.setPosX(position.getPosX() + 1);
-            // если внизу никого нет и не граница поля опускаемся на шаг вниз
-            } else if (!state.contains("Мертв") && freeUp(team1, -1) && position.getPosX() != 10) {
-                position.setPosX(position.getPosX() - 1);
-            // в противном случае пропускаем ход
-            } else return;
+        if (nearEnemyIndex==-1) return;
+        else {
+
+            // поиск по горизонтали координаты противника
+            int enemyPosY = team2.get(nearEnemyIndex).position.getPosY();
+
+            // определение направления движения
+            int horizontStep = goLeft(enemyPosY);
+
+            // определение дистанции до врага
+            Double distanceToEnemy = position.getDistance(team2.get(nearEnemyIndex).position);
+
+            // если дистанция меньше 2х, атака
+            if (distanceToEnemy <= 2) {
+                // атака
+                attac(team2, nearEnemyIndex);
+
+                //  иначе если впереди никого нет, передвигаемся на 1 шаг
+            } else {
+                if (!state.contains("Мертв") && freeForvard(team1, horizontStep)) {
+                    position.setPosY(position.getPosY() + horizontStep);
+
+                    // если сверху никого нет и не граница поля поднимаемся на шаг наверх
+                } else if (!state.contains("Мертв") && freeUp(team1, 1) && position.getPosX() != 1) {
+                    position.setPosX(position.getPosX() + 1);
+                    // если внизу никого нет и не граница поля опускаемся на шаг вниз
+                } else if (!state.contains("Мертв") && freeUp(team1, -1) && position.getPosX() != 10) {
+                    position.setPosX(position.getPosX() - 1);
+                    // в противном случае пропускаем ход
+                } else return;
+            }
         }
     }
 

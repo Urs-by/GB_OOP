@@ -54,15 +54,15 @@ public abstract class Magi extends Human {
 
     @Override
     public void step(ArrayList<Human> team1, ArrayList<Human> team2) {
-        int indexPatient = findPatient(team1);
-        if (indexPatient != -1 && getNearEnemyIndex(team2)!=-1) {
+        if (!state.contains("Мертв")) {
+            int indexPatient = findPatient(team1);
+            int EnemyIndex = getNearEnemyIndex(team2);
+            if (indexPatient != -1) {
+                team1.get(indexPatient).setHp(team1.get(indexPatient).getHp() - minDamage);
+            } else if(EnemyIndex != -1) {
+                team2.get(EnemyIndex).setHp(team1.get(EnemyIndex).getHp() + minDamage);
+            }
 
-            team1.get(indexPatient).setHp(team1.get(indexPatient).getHp() - minDamage);
-//            team1.get(indexPatient).setState("Жив");
-
-//        } else {
-//            System.out.println(" Лечить никого не надо, победа!");
-//            return;
         }
     }
 }

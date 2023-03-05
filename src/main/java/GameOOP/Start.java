@@ -76,21 +76,20 @@ public class Start {
             scan.nextLine();
 
             for (Human human : allTeam) {
-                if (team1.contains(human)) {
-                    human.step(team1, team2);
-                    if (dead(team2)) {
-                        System.out.printf("Команда %s, победила!", team1.get(0).getTeam());
-                        break;
-                    }
-                } else {
-                    human.step(team2, team1);
-                    if (dead(team1)) {
-                        System.out.printf("Команда %s, победила!", team2.get(0).getTeam());
-                        break;
-                    }
-                }
+                if (team1.contains(human)) human.step(team1, team2);
+                else human.step(team2, team1);
+            }
+
+            if (dead(team2)) {
+                System.out.printf("Команда %s, победила!", team1.get(0).getTeam());
+                break;
+            }
+            if (dead(team1)) {
+                System.out.printf("Команда %s, победила!", team2.get(0).getTeam());
+                break;
             }
         }
+
     }
 
     // проверка на состояния команды

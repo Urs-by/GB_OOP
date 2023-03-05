@@ -67,7 +67,7 @@ public abstract class Human implements HumanInterface {
         int index = -1;
         double min = 1000;
         for (int i = 0; i < team.size(); i++) {
-            if (min > position.getDistance(team.get(i).position ) && !team.get(i).state.contains("Мертв")) {
+            if (min > position.getDistance(team.get(i).position) && !team.get(i).state.contains("Мертв")) {
 
                 min = position.getDistance(team.get(i).position);
                 index = i;
@@ -80,7 +80,7 @@ public abstract class Human implements HumanInterface {
         float damage = (team.get(nearEnemyIndex).getProtection() - attack > 0) ? minDamage :
                 (team.get(nearEnemyIndex).getProtection() - attack < 0) ? maxDamage : (minDamage + maxDamage) / 2;
         team.get(nearEnemyIndex).setHp(team.get(nearEnemyIndex).getHp() - damage);
-        if  (team.get(nearEnemyIndex).getHp() <=0) {
+        if (team.get(nearEnemyIndex).getHp() <= 0) {
             team.get(nearEnemyIndex).setState("Мертв");
         }
     }

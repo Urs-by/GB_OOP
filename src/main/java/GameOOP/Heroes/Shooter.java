@@ -29,8 +29,8 @@ public abstract class Shooter extends Human {
         for (int i = 0; i < team.size(); i++) {
             if (team.get(i).getType().contains("Крестьянин") && team.get(i).getState().contains("Жив")) {
                 team.get(i).setState("Занят");
-                System.out.printf("Крестьянин %s ", team.get(i));
-                System.out.println();
+//                System.out.printf("Крестьянин %s ", team.get(i));
+//                System.out.println();
                 return i;
             }
         }
@@ -44,13 +44,13 @@ public abstract class Shooter extends Human {
             // поиск индекса ближайшего врага
             int indexEnemy = super.getNearEnemyIndex(team2);
             if (indexEnemy == -1) {
-                System.out.println("Все противники мертвы");
+//                System.out.println("Все противники мертвы");
                 return;
             } else {
                 // вычисляем расстояние до врага
 
                 Double distanceToEnemy = position.getDistance(team2.get(indexEnemy).position);
-                shoot();
+//                shoot();
                 attac(team2, indexEnemy);
 
                 ;

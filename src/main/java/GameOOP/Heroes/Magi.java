@@ -58,7 +58,7 @@ public abstract class Magi extends Human {
         if (indexPatient != -1 && getNearEnemyIndex(team2)!=-1) {
 
             team1.get(indexPatient).setHp(team1.get(indexPatient).getHp() - minDamage);
-            team1.get(indexPatient).setState("Жив");
+//            team1.get(indexPatient).setState("Жив");
 
 //        } else {
 //            System.out.println(" Лечить никого не надо, победа!");

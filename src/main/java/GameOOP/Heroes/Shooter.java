@@ -26,13 +26,15 @@ public abstract class Shooter extends Human {
     }
 
     public int findFarmer(ArrayList<Human> team) {
-        int index = -1;
         for (int i = 0; i < team.size(); i++) {
-            if (team.get(i).getType().contains("Крестьянин") & !team.get(i).getType().contains("Мертв")) {
+            if (team.get(i).getType().contains("Крестьянин") && team.get(i).getState().contains("Жив")) {
+                team.get(i).setState("Занят");
+                System.out.printf("Крестьянин %s ", team.get(i));
+                System.out.println();
                 return i;
             }
         }
-        return index;
+        return -1;
     }
 
 
@@ -44,37 +46,36 @@ public abstract class Shooter extends Human {
             if (indexEnemy == -1) {
                 System.out.println("Все противники мертвы");
                 return;
-            } else{
+            } else {
                 // вычисляем расстояние до врага
 
                 Double distanceToEnemy = position.getDistance(team2.get(indexEnemy).position);
+                shoot();
+                attac(team2, indexEnemy);
 
-
+                ;
                 // расчет урона
-                float damage = (team2.get(indexEnemy).getProtection() - attack > 0) ? minDamage :
-                        (team2.get(indexEnemy).getProtection() - attack < 0) ? maxDamage : (minDamage + maxDamage) / 2;
-
-                // в зависимости от расстояния отнимаем жизнь
-                if (distanceToEnemy < 5) {
-                    team2.get(indexEnemy).setHp(team2.get(indexEnemy).getHp() - damage);
-                    if (team2.get(indexEnemy).getHp() < 0) {
-                        team2.get(indexEnemy).setState("Мертв");
-                    }
-                } else {
-                    team2.get(indexEnemy).setHp(team2.get(indexEnemy).getHp() - damage * 0.5f);
-                    if (team2.get(indexEnemy).getHp() <= 0) {
-                        team2.get(indexEnemy).setState("Мертв");
+//                float damage = (team2.get(indexEnemy).getProtection() - attack > 0) ? minDamage :
+//                        (team2.get(indexEnemy).getProtection() - attack < 0) ? maxDamage : (minDamage + maxDamage) / 2;
 //
-                    }
-                }
+//                // в зависимости от расстояния отнимаем жизнь
+//                if (distanceToEnemy < 5) {
+//                    team2.get(indexEnemy).setHp(team2.get(indexEnemy).getHp() - damage);
+//                    if (team2.get(indexEnemy).getHp() < 0) {
+//                        team2.get(indexEnemy).setState("Мертв");
+//                    }
+//                } else {
+//                    team2.get(indexEnemy).setHp(team2.get(indexEnemy).getHp() - damage * 0.5f);
+//                    if (team2.get(indexEnemy).getHp() <= 0) {
+//                        team2.get(indexEnemy).setState("Мертв");
+////
+
+
                 // поиск своего крестьянина
-                if (findFarmer(team1) == -1) {
-                    this.shots -= 1;
-                }
+                if (findFarmer(team1) == -1) shots -= 1;
 
             }
         }
-
     }
 
     public void shoot() {

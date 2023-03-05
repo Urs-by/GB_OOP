@@ -76,6 +76,14 @@ public abstract class Human implements HumanInterface {
         return index;
     }
 
+    public void attac(ArrayList<Human> team, int nearEnemyIndex) {
+        float damage = (team.get(nearEnemyIndex).getProtection() - attack > 0) ? minDamage :
+                (team.get(nearEnemyIndex).getProtection() - attack < 0) ? maxDamage : (minDamage + maxDamage) / 2;
+        team.get(nearEnemyIndex).setHp(team.get(nearEnemyIndex).getHp() - damage);
+        if  (team.get(nearEnemyIndex).getHp() <=0) {
+            team.get(nearEnemyIndex).setState("Мертв");
+        }
+    }
 
 
     public String getState() {

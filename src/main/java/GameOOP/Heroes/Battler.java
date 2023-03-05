@@ -54,17 +54,18 @@ public abstract class Battler extends Human {
     @Override
     public void step(ArrayList<Human> team1, ArrayList<Human> team2) {
         // поиск ближайшего противник
-        int nearEnemyIndext = getNearEnemyIndex(team2);
+        int nearEnemyIndex = getNearEnemyIndex(team2);
         // поиск по горизонтали координаты противника
-        int enemyPosY = team2.get(nearEnemyIndext).position.getPosY();
+        int enemyPosY = team2.get(nearEnemyIndex).position.getPosY();
         // определение направления движения
         int horizontStep = goLeft(enemyPosY);
         // определение дистанции до врага
-        Double distanceToEnemy = position.getDistance(team2.get(nearEnemyIndext).position);
-        // если дистанция меньше 2х атака
-        if (distanceToEnemy < 3){
-            team2.get(nearEnemyIndext).setHp(0);
-            team2.get(nearEnemyIndext).setState("Мертв");
+        Double distanceToEnemy = position.getDistance(team2.get(nearEnemyIndex).position);
+        // если дистанция меньше 2х, атака
+        if (distanceToEnemy <= 2){
+            // атака
+            attac(team2, nearEnemyIndex );
+
         //  иначе если впереди никого нет, передвигаемся на 1 шаг
         } else {
             if (!state.contains("Мертв") && freeForvard(team1, horizontStep)) {
@@ -78,8 +79,6 @@ public abstract class Battler extends Human {
             // в противном случае пропускаем ход
             } else return;
         }
-
-
     }
 
 }

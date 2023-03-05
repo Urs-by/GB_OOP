@@ -9,11 +9,14 @@ import GameOOP.Heroes.Battlers.Pikeman;
 import GameOOP.Heroes.Battlers.Ronin;
 
 import java.util.ArrayList;
+
 import java.util.Comparator;
 import java.util.Random;
 import java.util.Scanner;
 
+
 public class Start {
+
     public static ArrayList<Human> team1 = new ArrayList<>();
     public static ArrayList<Human> team2 = new ArrayList<>();
     public static ArrayList<Human> allTeam = new ArrayList<>(team1);

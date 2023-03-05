@@ -30,7 +30,7 @@ public class Ronin extends Battler {
 
     @Override
     public String getInfo() {
-        return "Я разбойник, ха ха ха";
+        return "R разбойник, ха ха ха";
     }
 
 

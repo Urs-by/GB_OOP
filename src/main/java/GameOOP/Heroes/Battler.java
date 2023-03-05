@@ -62,7 +62,7 @@ public abstract class Battler extends Human {
         // определение дистанции до врага
         Double distanceToEnemy = position.getDistance(team2.get(nearEnemyIndext).position);
         // если дистанция меньше 2х атака
-        if (distanceToEnemy < 2){
+        if (distanceToEnemy < 3){
             team2.get(nearEnemyIndext).setHp(0);
             team2.get(nearEnemyIndext).setState("Мертв");
         //  иначе если впереди никого нет, передвигаемся на 1 шаг

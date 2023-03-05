@@ -21,7 +21,7 @@ public class Pikeman extends Battler {
 
     @Override
     public String getInfo() {
-        return "Я копейщик ->";
+        return "P копейщик ->";
     }
 
 

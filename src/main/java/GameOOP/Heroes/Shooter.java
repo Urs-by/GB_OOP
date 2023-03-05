@@ -48,8 +48,7 @@ public abstract class Shooter extends Human {
                 // вычисляем расстояние до врага
 
                 Double distanceToEnemy = position.getDistance(team2.get(indexEnemy).position);
-                System.out.printf("Sooters distance, %f", distanceToEnemy);
-                System.out.println();
+
 
                 // расчет урона
                 float damage = (team2.get(indexEnemy).getProtection() - attack > 0) ? minDamage :

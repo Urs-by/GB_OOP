@@ -10,9 +10,7 @@ public abstract class Battler extends Human {
                    Integer minDamage, Integer maxDamage, Integer speed, Coordinates position) {
         super(type, name, team, attack, protection, hp, minDamage, maxDamage, speed, position);
     }
-    //    public Battler(String type, String name, String team, Integer attack, Integer protection, Integer hp, Integer minDamage, Integer maxDamage, Integer speed, Integer x, Integer y) {
-//        super(type, name, team, attack, protection, hp, minDamage, maxDamage, speed, x, y);
-//    }
+
 
     public Battler(String name) {
         super(name);
@@ -23,14 +21,65 @@ public abstract class Battler extends Human {
         return super.toString() + '}';
     }
 
-    @Override
-    public void step(ArrayList<Human> team1, ArrayList<Human> team2) {
 
+    public int goLeft(int enemyPosY) {
+        if (position.getPosY() < enemyPosY) return 1;
+        else return -1;
     }
 
-//    public void attacks() {
-//        System.out.printf("%s %s аттакует", type, getName());
-//        System.out.println();
+//    public int goUp(int enemyPosX) {
+//        if (position.getPosX() < enemyPosX) return 1;
+//        else return -1;
 //    }
+
+    public boolean freeForvard(ArrayList<Human> team, int step) {
+        for (int i = 0; i < team.size(); i++) {
+            if ((position.getPosY() + step) == team.get(i).position.getPosY() && position.getPosX() == team.get(i).position.getPosX())
+                return false;
+        }
+        return true;
+    }
+
+    public boolean freeUp(ArrayList<Human> team, int step) {
+        for (int i = 0; i < team.size(); i++) {
+            if (position.getPosY() == team.get(i).position.getPosY() && (position.getPosX() + step) == team.get(i).position.getPosX())
+                return false;
+        }
+        return true;
+    }
+//
+//    }
+
+
+    @Override
+    public void step(ArrayList<Human> team1, ArrayList<Human> team2) {
+        // поиск ближайшего противник
+        int nearEnemyIndext = getNearEnemyIndex(team2);
+        // поиск по горизонтали координаты противника
+        int enemyPosY = team2.get(nearEnemyIndext).position.getPosY();
+        // определение направления движения
+        int horizontStep = goLeft(enemyPosY);
+        // определение дистанции до врага
+        Double distanceToEnemy = position.getDistance(team2.get(nearEnemyIndext).position);
+        // если дистанция меньше 2х атака
+        if (distanceToEnemy < 2){
+            team2.get(nearEnemyIndext).setHp(0);
+            team2.get(nearEnemyIndext).setState("Мертв");
+        //  иначе если впереди никого нет, передвигаемся на 1 шаг
+        } else {
+            if (!state.contains("Мертв") && freeForvard(team1, horizontStep)) {
+                position.setPosY(position.getPosY() + horizontStep);
+            // если сверху никого нет и не граница поля поднимаемся на шаг наверх
+            } else if (!state.contains("Мертв") && freeUp(team1, 1) && position.getPosX() != 1) {
+                position.setPosX(position.getPosX() + 1);
+            // если внизу никого нет и не граница поля опускаемся на шаг вниз
+            } else if (!state.contains("Мертв") && freeUp(team1, -1) && position.getPosX() != 10) {
+                position.setPosX(position.getPosX() - 1);
+            // в противном случае пропускаем ход
+            } else return;
+        }
+
+
+    }
 
 }

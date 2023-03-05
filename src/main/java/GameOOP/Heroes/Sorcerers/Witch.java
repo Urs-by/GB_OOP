@@ -14,6 +14,6 @@ public class Witch extends Magi {
 
     @Override
     public String getInfo() {
-        return ("Я колдун !");
+        return ("K колдун !");
     }
 }
